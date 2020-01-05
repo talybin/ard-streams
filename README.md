@@ -1,4 +1,4 @@
-# ElectronSTL
+# ParticleSTL
 
 This library includes iostreams and some features from C++14 and C++17.
 
