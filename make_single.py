@@ -11,7 +11,7 @@ import re
 parser = argparse.ArgumentParser(
     description = 'Converts rest to a single header file')
 parser.add_argument('--output', '-o', nargs = 1,
-    help = 'path to output file', metavar = 'file', default = 'single/ard_streams.hpp')
+    help = 'path to output file', metavar = 'file', default = 'single/ard-streams.h')
 args = parser.parse_args()
 
 single_file = args.output if type(args.output) == str else args.output[0]
