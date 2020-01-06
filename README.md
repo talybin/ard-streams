@@ -1,20 +1,40 @@
-# ParticleSTL
+# STL iostreams for Arduino
 
-This library includes iostreams and some features from C++14 and C++17.
+This library includes iostreams from STL with additional wrappers for Arduino hardware.
 
-All files in this library are copy-pasted from GCC 7.3 standard library with some modifications to be compilable under C++11 and to avoid linking of libstdc++ that otherwise overflow the flash memory. Also to avoid file and namespace conflicts, all files in this library has `.hpp` extension and `ard` namespace (instead of `std`).
+All files in this library are copy-pasted from GCC 7.3 standard library with some modifications to be compilable under C++11 and to avoid linking of libstdc++ that otherwise overflow the flash memory.
 
-Limits of ParticleSTL iostreams:
+## Using STL streams
+
+To avoid file and namespace conflicts, all files in this library has `.hpp` extension and `ard` namespace (instead of `std`). Otherwise the full documentation is available on [cppreference.com](https://en.cppreference.com/w/cpp/io).
+
+There are some limitations though:
 
 * Locale is not supported
 * `wchar_t` is not supported
+
+```c++
+#include <iostream.hpp>
+#include <sstream.hpp>
+
+void setup()
+{
+    std::string name;
+    int version;
+
+    ard::istringstream iss("ard-streams 1.0.0");
+    iss >> name >> version;
+}
+
+```
 
 ## Using streams with serial port
 
 The serial stream is not in standard GCC library but included as usefull part of Arduino projects.
 
 ```c++
-#include <ParticleSTL.h>
+#include <iostream.hpp>
+#include <serstream.hpp>
 
 namespace ard
 {
