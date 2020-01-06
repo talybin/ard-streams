@@ -2,7 +2,7 @@
 
 This library includes iostreams from STL with additional wrappers for Arduino hardware.
 
-All files in this library are copy-pasted from GCC 7.3 standard library with some modifications to be compilable under C++11 and to avoid linking of libstdc++ that otherwise overflow the flash memory.
+All files in this library are copy-pasted from GCC 7.3 standard library with some modifications to avoid linking of libstdc++ that otherwise overflow the flash memory.
 
 ## Using STL streams
 
