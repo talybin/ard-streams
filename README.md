@@ -13,6 +13,7 @@ There are some limitations though:
 * Locale is not supported
 * `wchar_t` is not supported
 * File streams not implemented
+* Exceptions are disabled
 
 Usage example:
 
@@ -64,5 +65,17 @@ void loop()
     }
 }
 
+```
+
+## Creating a single header
+
+You can generate a single, header only, file of this library with `make_single.py` tool. By default it generates `single/ard-streams.h` under library's root. This can be changed with `-o` or `--output` flag. For example:
+
+```
+python make_single.py
+```
+
+```
+python make_single.py -o /tmp/iostreams.hpp
 ```
 
