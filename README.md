@@ -14,6 +14,8 @@ There are some limitations though:
 * `wchar_t` is not supported
 * File streams not implemented
 
+Usage example:
+
 ```c++
 #include <iostream.hpp>
 #include <sstream.hpp>
