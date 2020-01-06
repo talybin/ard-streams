@@ -4,6 +4,11 @@ This library includes iostreams and some features from C++14 and C++17.
 
 All files in this library are copy-pasted from GCC 7.3 standard library with some modifications to be compilable under C++11 and to avoid linking of libstdc++ that otherwise overflow the flash memory. Also to avoid file and namespace conflicts, all files in this library has `.hpp` extension and `ard` namespace (instead of `std`).
 
+Limits of ParticleSTL iostreams:
+
+* Locale is not supported
+* `wchar_t` is not supported
+
 ## Using streams with serial port
 
 The serial stream is not in standard GCC library but included as usefull part of Arduino projects.
