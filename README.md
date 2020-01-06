@@ -17,18 +17,18 @@ There are some limitations though:
 Usage example:
 
 ```c++
-#include <iostream.hpp>
 #include <sstream.hpp>
 
 void setup()
 {
-    std::string name;
-    int version;
+    int n;
+    double f;
+    bool b;
+    std::string s;
 
-    ard::istringstream iss("ard-streams 1.0.0");
-    iss >> name >> version;
+    ard::istringstream iss("41 3.14 false helloworld");
+    iss >> n >> f >> ard::boolalpha >> b >> s;
 }
-
 ```
 
 ## Using streams with serial port
