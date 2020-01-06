@@ -12,6 +12,7 @@ There are some limitations though:
 
 * Locale is not supported
 * `wchar_t` is not supported
+* File streams not implemented
 
 ```c++
 #include <iostream.hpp>
