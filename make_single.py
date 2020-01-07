@@ -15,7 +15,7 @@ parser.add_argument('--output', '-o', nargs = 1,
 args = parser.parse_args()
 
 single_file = args.output if type(args.output) == str else args.output[0]
-license_file = 'LICENSE.txt'
+license_file = 'LICENSE'
 
 includes = []
 depend_include = re.compile(r'#include <(.*?)>')
