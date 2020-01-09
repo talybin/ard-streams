@@ -10,7 +10,11 @@ namespace ard
 void setup()
 {
     Serial1.begin(9600);
-    ard::cout << "Hello World\n";
+
+    // Wait for input for 30 seconds.
+    // Note, ard::iserialstream will use this
+    // timeout value
+    Serial1.setTimeout(30000);
 }
 
 void loop()
@@ -21,8 +25,10 @@ void loop()
     if (ard::cin >> data)
         ard::cout << "2 + " << data << " = " << (2 + data) << '\n';
     else {
+        // Clear failbit
         ard::cin.clear();
-        ard::cin.ignore();
+        // Empty read buffer
+        ard::cin.ignore(unsigned(-1));
     }
 }
 
