@@ -49,11 +49,10 @@ void setup()
 {
     Serial1.begin(9600);
 
-    // ard::iserialstream will use this
+    // Wait for input for 30 seconds.
+    // Note, ard::iserialstream will use this
     // timeout value
-    Serial1.setTimeout(2000);
-
-    ard::cout << "Hello World\n";
+    Serial1.setTimeout(30000);
 }
 
 void loop()
