@@ -618,7 +618,7 @@ namespace ard
     pad_(CharT fill, std::streamsize newlen, ios_base& io,
          CharT* news, const CharT* olds, int& len) const
     {
-        using traits_type = char_traits<CharT>;
+        using traits_type = std::char_traits<CharT>;
         using ct = ctype<CharT>;
 
         std::streamsize oldlen = len;
@@ -878,7 +878,7 @@ namespace ard
         }
         else {
             using char_type = CharT;
-            using traits_type = char_traits<char_type>;
+            using traits_type = std::char_traits<char_type>;
             using ct = ctype<char_type>;
 
             const char_type* name =

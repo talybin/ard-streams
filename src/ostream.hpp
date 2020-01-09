@@ -31,7 +31,7 @@ namespace ard
     struct basic_iostream;
 
     // Template class basic_ostream
-    template <class CharT, class Traits = char_traits<CharT>>
+    template <class CharT, class Traits = std::char_traits<CharT>>
     struct basic_ostream : virtual basic_ios<CharT, Traits>
     {
         using char_type = CharT;
@@ -450,7 +450,7 @@ namespace ard
         if (!s)
             out.setstate(ios_base::badbit);
         else {
-            const size_t clen = char_traits<char>::length(s);
+            const size_t clen = std::char_traits<char>::length(s);
             CharT ws[clen];
 
             for (size_t  i = 0; i < clen; ++i)

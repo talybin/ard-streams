@@ -35,7 +35,7 @@ namespace ard
     // Most of the member functions called dispatched on stream objects
     // (e.g., std::cout.foo(bar);) are consolidated in this class.
     //
-    template <class CharT, class Traits = char_traits<CharT>>
+    template <class CharT, class Traits = std::char_traits<CharT>>
     struct basic_ios : ios_base
     {
         // These are standard types. They permit a standardized way of

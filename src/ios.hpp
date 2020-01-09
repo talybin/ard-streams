@@ -22,7 +22,6 @@
 
 #pragma once
 
-#include <bits/char_traits.hpp>
 #include <bits/ios_base.hpp>
 #include <streambuf.hpp>
 #include <bits/basic_ios.hpp>

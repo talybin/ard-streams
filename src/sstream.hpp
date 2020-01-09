@@ -259,7 +259,7 @@ namespace ard
 
 
     // [27.7.2] Template class basic_istringstream
-    template <class CharT, class Traits = char_traits<CharT>,
+    template <class CharT, class Traits = std::char_traits<CharT>,
               class Alloc = std::allocator<CharT>>
     struct basic_istringstream : basic_istream<CharT, Traits>
     {
@@ -337,7 +337,7 @@ namespace ard
 
 
     // [27.7.3] Template class basic_ostringstream
-    template <class CharT, class Traits = char_traits<CharT>,
+    template <class CharT, class Traits = std::char_traits<CharT>,
               class Alloc = std::allocator<CharT>>
     struct basic_ostringstream : basic_ostream<CharT, Traits>
     {
@@ -415,7 +415,7 @@ namespace ard
 
 
     // [27.7.4] Template class basic_stringstream
-    template <class CharT, class Traits = char_traits<CharT>,
+    template <class CharT, class Traits = std::char_traits<CharT>,
               class Alloc = std::allocator<CharT>>
     struct basic_stringstream : basic_iostream<CharT, Traits>
     {

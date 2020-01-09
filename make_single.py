@@ -18,7 +18,7 @@ single_file = args.output if type(args.output) == str else args.output[0]
 license_file = 'LICENSE'
 
 includes = []
-depend_include = re.compile(r'#include <(.*?)>')
+depend_include = re.compile(r'#include ["<](.*?)[>"]')
 pragma_once_hpp = re.compile(r'#pragma once')
 
 files_to_process = [

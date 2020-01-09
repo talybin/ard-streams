@@ -19,7 +19,7 @@
 namespace ard
 {
     // Implements an unbuffered basic_streambuf
-    template <class CharT, class Traits = char_traits<CharT>>
+    template <class CharT, class Traits = std::char_traits<CharT>>
     struct basic_serialbuf : basic_streambuf<CharT, Traits>
     {
         using char_type = CharT;
@@ -47,6 +47,12 @@ namespace ard
         { return serial_; }
 
     protected:
+        struct serial_overload : serial_type {
+        // Unprotect methods
+            using serial_type::timedRead;
+            using serial_type::timedPeek;
+        };
+
         // Get how many bytes available
         virtual std::streamsize showmanyc()
         { return serial_.available(); }
@@ -56,11 +62,11 @@ namespace ard
 
         // Peek a char
         virtual int_type underflow()
-        { return serial_.peek(); }
+        { return static_cast<serial_overload&>(serial_).timedPeek(); }
 
         // Read a char
         virtual int_type uflow()
-        { return serial_.read(); }
+        { return static_cast<serial_overload&>(serial_).timedRead(); }
 
         // Multiple character insertion
         virtual std::streamsize xsputn(const char_type* s, std::streamsize n)
@@ -68,7 +74,7 @@ namespace ard
     };
 
     // Input stream
-    template <class CharT, class Traits = char_traits<CharT>>
+    template <class CharT, class Traits = std::char_traits<CharT>>
     struct basic_iserialstream : basic_istream<CharT, Traits>
     {
         using char_type = CharT;
@@ -88,7 +94,7 @@ namespace ard
     };
 
     // Output stream
-    template <class CharT, class Traits = char_traits<CharT>>
+    template <class CharT, class Traits = std::char_traits<CharT>>
     struct basic_oserialstream : basic_ostream<CharT, Traits>
     {
         using char_type = CharT;
@@ -108,7 +114,7 @@ namespace ard
     };
 
     // Input/output stream
-    template <class CharT, class Traits = char_traits<CharT>>
+    template <class CharT, class Traits = std::char_traits<CharT>>
     struct basic_serialstream : basic_iostream<CharT, Traits>
     {
         using char_type = CharT;

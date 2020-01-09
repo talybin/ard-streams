@@ -26,7 +26,7 @@
 namespace ard
 {
     // Template class basic_istream
-    template <class CharT, class Traits = char_traits<CharT>>
+    template <class CharT, class Traits = std::char_traits<CharT>>
     struct basic_istream : virtual basic_ios<CharT, Traits>
     {
         using char_type = CharT;

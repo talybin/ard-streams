@@ -11,7 +11,6 @@ To avoid file and namespace conflicts, all files in this library has `.hpp` exte
 There are some limitations though:
 
 * Locale is not supported
-* `wchar_t` is not supported
 * File streams not implemented
 * Exceptions are disabled
 
@@ -49,6 +48,11 @@ namespace ard
 void setup()
 {
     Serial1.begin(9600);
+
+    // ard::iserialstream will use this
+    // timeout value
+    Serial1.setTimeout(2000);
+
     ard::cout << "Hello World\n";
 }
 
@@ -60,8 +64,10 @@ void loop()
     if (ard::cin >> data)
         ard::cout << "2 + " << data << " = " << (2 + data) << '\n';
     else {
+        // Clear failbit
         ard::cin.clear();
-        ard::cin.ignore();
+        // Empty read buffer
+        ard::cin.ignore(unsigned(-1));
     }
 }
 

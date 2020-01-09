@@ -28,7 +28,7 @@
 namespace ard
 {
     // The actual work of input and output (interface)
-    template <class CharT, class Traits = char_traits<CharT>>
+    template <class CharT, class Traits = std::char_traits<CharT>>
     struct basic_streambuf
     {
         using char_type = CharT;
