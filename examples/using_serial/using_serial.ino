@@ -27,8 +27,8 @@ void loop()
     else {
         // Clear failbit
         ard::cin.clear();
-        // Empty read buffer
-        ard::cin.ignore(unsigned(-1));
+        // Drain read buffer
+        ard::cin.ignore(ard::cin.rdbuf()->in_avail());
     }
 }
 
