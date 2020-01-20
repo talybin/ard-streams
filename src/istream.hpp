@@ -1032,6 +1032,14 @@ namespace ard
         return in;
     }
 
+    // Accept rvalue
+    template <class CharT, class Traits, class T>
+    inline std::enable_if_t<
+        not std::is_lvalue_reference<T>::value,
+        basic_istream<CharT, Traits>& >
+    operator>>(basic_istream<CharT, Traits>& is, T&& t)
+    { return is >> t; }
+
     //
     // Alias
     //
